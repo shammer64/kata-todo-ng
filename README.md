@@ -1,3 +1,40 @@
+# Kata Design
+
+Create a simple ToDo list app
+
+1. Write structural and visual tests for a ToDoListEntry component
+
+- Create one without crashing
+- Contains a text entry field
+- Contains a submit button
+
+2. Write structural and visual tests for a ToDoListItems component
+
+- Create one without crashing
+- Contains a list of ToDo items
+
+3. Write structural and visual tests for a ToDoList component
+
+- Create one without crashing
+- Contains a title
+- Contains a ToDoListEntry component
+- Contains a ToDoListItems component
+
+4. Write functional test for the ToDoListItems
+
+- Renders a list of items passed from parent
+
+5. Write functional tests for the ToDoListEntry component
+
+- Submit button disabled with no text
+- Submit button enabled with text
+- Calls a callback function when submit button pressed
+
+6. Write functional tests for the ToDoList component
+
+- Handles callback from ToDoListEntry component
+- Passes updated ToDo items to ToDoListItems component
+
 # NgTodoKata
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
