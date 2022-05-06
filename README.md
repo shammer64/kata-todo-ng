@@ -4,19 +4,21 @@ Create a simple ToDo list app
 
 1. Write structural and visual tests for a ToDoListEntry component
 
-- Create one without crashing
+- Generate the component (ng generate component ToDoListEntry)
+- Review the creational test generated with the component
 - Contains a text entry field
 - Contains a submit button
 
 2. Write structural and visual tests for a ToDoListItems component
 
-- Create one without crashing
+- Generate the component (ng generate component ...)
+- Review the creational test generated with the component
 - Contains a list of ToDo items
 
 3. Write structural and visual tests for a ToDoList component
 
-- Create one without crashing
-- Contains a title
+- Generate the component (ng generate component ...)
+- Review the creational test generated with the component
 - Contains a ToDoListEntry component
 - Contains a ToDoListItems component
 
