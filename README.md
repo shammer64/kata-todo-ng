@@ -22,17 +22,22 @@ Create a simple ToDo list app
 - Contains a ToDoListEntry component
 - Contains a ToDoListItems component
 
-4. Write functional test for the ToDoListItems
+4. Write structural test for App component
+
+- Remove generated content from app template
+- Contains a ToDoList component
+
+5. Write functional test for the ToDoListItems
 
 - Renders a list of items passed from parent
 
-5. Write functional tests for the ToDoListEntry component
+6. Write functional tests for the ToDoListEntry component
 
 - Submit button disabled with no text
 - Submit button enabled with text
 - Calls a callback function when submit button pressed
 
-6. Write functional tests for the ToDoList component
+7. Write functional tests for the ToDoList component
 
 - Handles callback from ToDoListEntry component
 - Passes updated ToDo items to ToDoListItems component
