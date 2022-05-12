@@ -1,3 +1,5 @@
 <div>
-  <ul class="todo-list-items"></ul>
-</div>>
+  <ul class="todo-list-items" *ngFor="let todoItem of todoItems">
+    <li class="todo-list-item">{{todoItem}}</li>
+  </ul>
+</div>
