@@ -24,7 +24,14 @@ describe('ToDoListEntryComponent', () => {
   });
 
   it('should render a text entry field', () => {
-      const compiled = fixture.nativeElement as HTMLElement;
-      expect(compiled.querySelector('.todo-entry-text')).toBeTruthy();
-  })
+    const htmlComponent = fixture.nativeElement as HTMLElement;
+    expect(htmlComponent.querySelector('.todo-entry-text')).toBeTruthy();
+  });
+
+  it('should render a "Submit" button', () => {
+    const htmlComponent = fixture.nativeElement as HTMLElement;
+    let button = htmlComponent.querySelector('.todo-entry-button');
+    expect(button).toBeTruthy();
+    expect(button?.innerHTML).toBe('Submit');
+  });
 });
