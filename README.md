@@ -19,6 +19,7 @@ Create a simple ToDo list app
 
 - Generate the component (ng generate component ...)
 - Review the creational test generated with the component
+- Renders a title
 - Contains a ToDoListEntry component
 - Contains a ToDoListItems component
 
