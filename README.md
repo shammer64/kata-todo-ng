@@ -38,7 +38,7 @@ Create a simple ToDo list app
 
 - Submit button disabled with no text
 - Submit button enabled with text
-- Raises and event when submit button pressed
+- Raises an event when submit button pressed
 
 7. Write functional tests for the ToDoList component
 
