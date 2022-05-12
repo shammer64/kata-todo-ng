@@ -42,4 +42,11 @@ describe('ToDoListComponent', () => {
     );
     expect(childComponent).toBeTruthy();
   });
+
+  it('should render title', () => {
+    const htmlComponent = fixture.nativeElement as HTMLElement;
+    expect(htmlComponent.querySelector('.todo-title')?.textContent)
+      .toContain("My To-Do List");
+  });
+
 });
