@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ToDoListEntryComponent } from '../to-do-list-entry/to-do-list-entry.component';
+import { ToDoListItemsComponent } from '../to-do-list-items/to-do-list-items.component';
 
 import { ToDoListComponent } from './to-do-list.component';
 
@@ -10,7 +11,11 @@ describe('ToDoListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ToDoListComponent, ToDoListEntryComponent],
+      declarations: [
+        ToDoListComponent,
+        ToDoListEntryComponent,
+        ToDoListItemsComponent,
+      ],
     }).compileComponents();
   });
 
@@ -25,7 +30,16 @@ describe('ToDoListComponent', () => {
   });
 
   it('should render a ToDoListEntryComponent', () => {
-    const childComponent = fixture.debugElement.query(By.directive(ToDoListEntryComponent));
+    const childComponent = fixture.debugElement.query(
+      By.directive(ToDoListEntryComponent)
+    );
+    expect(childComponent).toBeTruthy();
+  });
+
+  it('should render a ToDoListItemsComponent', () => {
+    const childComponent = fixture.debugElement.query(
+      By.directive(ToDoListItemsComponent)
+    );
     expect(childComponent).toBeTruthy();
   });
 });
