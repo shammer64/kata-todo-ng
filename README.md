@@ -26,6 +26,7 @@ Create a simple ToDo list app
 4. Write structural test for App component
 
 - Remove generated content from app template
+- Remove 2 tests related to title
 - Contains a ToDoList component
 
 5. Write functional test for the ToDoListItems
