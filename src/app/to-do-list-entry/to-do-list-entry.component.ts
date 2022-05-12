@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list-entry.component.css'],
 })
 export class ToDoListEntryComponent implements OnInit {
+  handleNewToDoItem() {
+    console.log("Button clicked")
+  }
   newToDoItem: string = '';
 
   constructor() {}

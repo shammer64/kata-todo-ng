@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 
 import { ToDoListEntryComponent } from './to-do-list-entry.component';
 
@@ -68,7 +69,17 @@ describe('ToDoListEntryComponent', () => {
     expect(button.disabled).toBeFalsy();
   });
 
-  xit('should invoke callback when "Submit" button is pressed', () => {
+  it('should invoke handler when "Submit" button is pressed', fakeAsync(() => {
+    spyOn(component, 'handleNewToDoItem');
+    const button = fixture.nativeElement.querySelector('.todo-entry-button');
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
 
-  });
+    fixture.detectChanges();
+    button.click();
+    tick();
+
+    expect(component.handleNewToDoItem).toHaveBeenCalled();
+  }));
 });

@@ -3,5 +3,6 @@
   <input type="text" class="todo-entry-text" 
     name="newToDoItem" [(ngModel)]="newToDoItem" />
   <button type="button" class="todo-entry-button" 
+    (click)="handleNewToDoItem()"
     [disabled]="newToDoItem == ''">Submit</button>
 </div>
