@@ -22,5 +22,10 @@ describe('ToDoListItemsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should render a list of items', () => {
+    const htmlComponent = fixture.nativeElement as HTMLElement;
+    expect(htmlComponent.querySelector('.todo-list-items')).toBeTruthy();
+  });
 
 });
