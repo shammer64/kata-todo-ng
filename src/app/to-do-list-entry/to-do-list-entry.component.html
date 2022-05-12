@@ -1,5 +1,6 @@
 <div>
   <input type="text" class="todo-entry-text" 
     name="newToDoItem" [(ngModel)]="newToDoItem" />
-  <button type="button" class="todo-entry-button">Submit</button>
+  <button type="button" class="todo-entry-button" 
+    [disabled]="newToDoItem == ''">Submit</button>
 </div>

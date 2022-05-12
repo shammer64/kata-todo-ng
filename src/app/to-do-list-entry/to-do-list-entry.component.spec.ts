@@ -33,7 +33,7 @@ describe('ToDoListEntryComponent', () => {
 
   it('should render a "Submit" button', () => {
     const htmlComponent = fixture.nativeElement as HTMLElement;
-    let button = htmlComponent.querySelector('.todo-entry-button');
+    const button = htmlComponent.querySelector('.todo-entry-button');
     expect(button).toBeTruthy();
     expect(button?.innerHTML).toBe('Submit');
   });
@@ -48,7 +48,22 @@ describe('ToDoListEntryComponent', () => {
     expect(component.newToDoItem).toEqual('Mow the lawn');
   });
 
-  xit('should disable "Submit" button until text is entered', () => {});
-  xit('should enable "Submit" button after text is entered', () => {});
-  xit('should invoke callback when "Submit" button is pressed', () => {});
+  it('should disable "Submit" button until text is entered', () => {
+    const button = fixture.nativeElement.querySelector('.todo-entry-button');
+    expect(button.disabled).toBeTruthy();
+  });
+
+  it('should enable "Submit" button after text is entered', () => {
+    const button = fixture.nativeElement.querySelector('.todo-entry-button');
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
+
+    fixture.detectChanges();
+    expect(button.disabled).toBeFalsy();
+  });
+
+  xit('should invoke callback when "Submit" button is pressed', () => {
+    
+  });
 });
