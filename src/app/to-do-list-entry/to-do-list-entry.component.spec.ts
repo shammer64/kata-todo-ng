@@ -30,6 +30,11 @@ describe('ToDoListEntryComponent', () => {
     const htmlComponent = fixture.nativeElement as HTMLElement;
     expect(htmlComponent.querySelector('.todo-entry-text')).toBeTruthy();
   });
+  
+  it('should label the text entry field', () => {
+    const htmlComponent = fixture.nativeElement as HTMLElement;
+    expect(htmlComponent.querySelector('label')?.innerText).toBe('Please enter a new To-Do item:')
+  });
 
   it('should render a "Submit" button', () => {
     const htmlComponent = fixture.nativeElement as HTMLElement;
@@ -64,6 +69,6 @@ describe('ToDoListEntryComponent', () => {
   });
 
   xit('should invoke callback when "Submit" button is pressed', () => {
-    
+
   });
 });
