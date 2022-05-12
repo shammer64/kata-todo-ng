@@ -1,4 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { ToDoListEntryComponent } from '../to-do-list-entry/to-do-list-entry.component';
 import { ToDoListItemsComponent } from '../to-do-list-items/to-do-list-items.component';
@@ -16,6 +18,8 @@ describe('ToDoListComponent', () => {
         ToDoListEntryComponent,
         ToDoListItemsComponent,
       ],
+      imports: [FormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

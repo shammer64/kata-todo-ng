@@ -1,4 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { ToDoListItemsComponent } from './to-do-list-items.component';
 
@@ -8,7 +10,9 @@ describe('ToDoListItemsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToDoListItemsComponent ]
+      declarations: [ ToDoListItemsComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [FormsModule],
     })
     .compileComponents();
   });

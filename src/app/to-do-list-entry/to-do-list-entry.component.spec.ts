@@ -1,4 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { ToDoListEntryComponent } from './to-do-list-entry.component';
 
@@ -8,9 +10,10 @@ describe('ToDoListEntryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToDoListEntryComponent ]
-    })
-    .compileComponents();
+      declarations: [ToDoListEntryComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [FormsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -34,4 +37,18 @@ describe('ToDoListEntryComponent', () => {
     expect(button).toBeTruthy();
     expect(button?.innerHTML).toBe('Submit');
   });
+
+  it('should update component property when text is entered', () => {
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
+ 
+    fixture.detectChanges();
+
+    expect(component.newToDoItem).toEqual('Mow the lawn');
+  });
+
+  xit('should disable "Submit" button until text is entered', () => {});
+  xit('should enable "Submit" button after text is entered', () => {});
+  xit('should invoke callback when "Submit" button is pressed', () => {});
 });
