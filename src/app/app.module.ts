@@ -11,12 +11,10 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     AppComponent,
     ToDoListEntryComponent,
     ToDoListItemsComponent,
-    ToDoListComponent
+    ToDoListComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
