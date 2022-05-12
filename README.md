@@ -7,6 +7,7 @@ Create a simple ToDo list app
 - Generate the component (ng generate component ToDoListEntry)
 - Review the creational test generated with the component
 - Contains a text entry field
+- Contains a label for the text entry field
 - Contains a submit button
 
 2. Write structural and visual tests for a ToDoListItems component
@@ -37,7 +38,7 @@ Create a simple ToDo list app
 
 - Submit button disabled with no text
 - Submit button enabled with text
-- Calls a callback function when submit button pressed
+- Raises and event when submit button pressed
 
 7. Write functional tests for the ToDoList component
 
