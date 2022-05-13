@@ -37,6 +37,7 @@ describe('ToDoListComponent', () => {
     const childComponent = fixture.debugElement.query(
       By.directive(ToDoListEntryComponent)
     );
+
     expect(childComponent).toBeTruthy();
   });
 
@@ -44,11 +45,13 @@ describe('ToDoListComponent', () => {
     const childComponent = fixture.debugElement.query(
       By.directive(ToDoListItemsComponent)
     );
+
     expect(childComponent).toBeTruthy();
   });
 
   it('should render title', () => {
     const htmlComponent = fixture.nativeElement as HTMLElement;
+    
     expect(htmlComponent.querySelector('.todo-title')?.textContent)
       .toContain("My To-Do List");
   });

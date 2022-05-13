@@ -29,6 +29,7 @@ describe('ToDoListItemsComponent', () => {
   
   it('should not render a list of items when no data is passed', () => {
     const htmlComponent = fixture.nativeElement as HTMLElement;
+
     expect(htmlComponent.querySelector('.todo-list-items')).toBeFalsy();
   });
 
@@ -36,6 +37,7 @@ describe('ToDoListItemsComponent', () => {
     component.todoItems = ['Dummy'];
     fixture.detectChanges();
     const htmlComponent = fixture.nativeElement as HTMLElement;
+
     expect(htmlComponent.querySelector('.todo-list-items')).toBeTruthy();
   });
 
