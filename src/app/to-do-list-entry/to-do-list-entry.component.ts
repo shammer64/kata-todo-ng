@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-to-do-list-entry',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list-entry.component.css'],
 })
 export class ToDoListEntryComponent implements OnInit {
+  @Output() newToDoRequest: EventEmitter<string> = new EventEmitter();
   handleNewToDoItem() {
     console.log("Button clicked: " + this.newToDoItem);
+    this.newToDoRequest.emit(this.newToDoItem);
     this.newToDoItem = '';
   }
   newToDoItem: string = '';

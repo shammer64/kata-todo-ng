@@ -1,8 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
-
 import { ToDoListEntryComponent } from './to-do-list-entry.component';
 
 describe('ToDoListEntryComponent', () => {
@@ -116,5 +114,21 @@ describe('ToDoListEntryComponent', () => {
 
     expect(input.value).toBe('');
   }));
-  xit('should emit custom event for parent');
+
+  it('should emit custom event for parent', fakeAsync(() => {
+    const button = fixture.nativeElement.querySelector('.todo-entry-button');
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+    spyOn(component.newToDoRequest, 'emit');
+
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    button.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    tick();
+
+    expect(component.newToDoRequest.emit).toHaveBeenCalledWith('Mow the lawn');
+  }));
 });
+
