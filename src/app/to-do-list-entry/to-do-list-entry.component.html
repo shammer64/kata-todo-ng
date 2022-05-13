@@ -1,7 +1,8 @@
 <div>
   <label for="newToDoItem">Please enter a new To-Do item:</label>
-  <input type="text" class="todo-entry-text" 
-    name="newToDoItem" [(ngModel)]="newToDoItem" />
+  <input type="text" class="todo-entry-text" name="newToDoItem" 
+    (change)="handleNewToDoItem()"
+    [(ngModel)]="newToDoItem" />
   <button type="button" class="todo-entry-button" 
     (click)="handleNewToDoItem()"
     [disabled]="newToDoItem == ''">Submit</button>

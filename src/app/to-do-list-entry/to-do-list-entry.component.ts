@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoListEntryComponent implements OnInit {
   handleNewToDoItem() {
-    console.log("Button clicked")
+    console.log("Button clicked: " + this.newToDoItem);
+    this.newToDoItem = '';
   }
   newToDoItem: string = '';
 
