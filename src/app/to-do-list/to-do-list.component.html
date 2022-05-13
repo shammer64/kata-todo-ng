@@ -1,6 +1,6 @@
 <div>
   <h1 class="todo-title">My To-Do List</h1>
-  <app-to-do-list-entry></app-to-do-list-entry>
+  <app-to-do-list-entry (newToDoRequest)="handleNewToDoItem($event)"></app-to-do-list-entry>
   <app-to-do-list-items></app-to-do-list-items>
 </div>
 

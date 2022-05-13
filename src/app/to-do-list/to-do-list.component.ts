@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent implements OnInit {
+  handleNewToDoItem(newToDoItem: string) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor() { }
 
