@@ -88,7 +88,7 @@ describe('ToDoListEntryComponent', () => {
     expect(component.handleNewToDoItem).toHaveBeenCalled();
   }));
 
-  it('should clear text when handler is invoked', fakeAsync(() => {
+  it('should clear text submit button is pressed', fakeAsync(() => {
     const button = fixture.nativeElement.querySelector('.todo-entry-button');
     const input = fixture.nativeElement.querySelector('.todo-entry-text');
 
@@ -96,8 +96,6 @@ describe('ToDoListEntryComponent', () => {
     input.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     tick();
-    // Either event trigger this action
-    // input.dispatchEvent(new Event('change'));
     button.dispatchEvent(new Event('click'));
     fixture.detectChanges();
     tick();
@@ -105,6 +103,18 @@ describe('ToDoListEntryComponent', () => {
     expect(input.value).toBe('');
   }));
 
-  xit('should invoke handler when text present and enter key is pressed');
+  it('should invoke handler when text present and enter key is pressed', fakeAsync(() => {
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    input.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
+    tick();
+
+    expect(input.value).toBe('');
+  }));
   xit('should emit custom event for parent');
 });
