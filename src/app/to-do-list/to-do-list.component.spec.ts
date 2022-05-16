@@ -19,7 +19,7 @@ describe('ToDoListComponent', () => {
         ToDoListItemsComponent,
       ],
       imports: [FormsModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      // schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 
@@ -72,5 +72,47 @@ describe('ToDoListComponent', () => {
 
     expect(component.handleNewToDoItem).toHaveBeenCalledWith('Mow the lawn');
   }));
+
+  it('should persist a new item', fakeAsync(() => {
+    const button = fixture.nativeElement.querySelector('.todo-entry-button');
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    button.dispatchEvent(new Event('click'));
+    tick();
+
+    expect(component.toDoListItems.length).toBe(1);
+    expect(component.toDoListItems).toContain('Mow the lawn');
+  }));
+
+  it('should display persisted todo items', fakeAsync(() => {
+    const button = fixture.nativeElement.querySelector('.todo-entry-button');
+    const input = fixture.nativeElement.querySelector('.todo-entry-text');
+    input.value = 'Mow the lawn';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    button.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    tick();
+    input.value = 'Weed the garden';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    button.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    tick();
+
+    const todoListItems =
+      fixture.nativeElement.querySelectorAll('.todo-list-item');
+
+    expect(todoListItems?.length).toBe(2);
+    expect(todoListItems[0]?.innerText).toBe('Mow the lawn');
+    expect(todoListItems[1]?.innerText).toBe('Weed the garden');
+  }));
+
 
 });

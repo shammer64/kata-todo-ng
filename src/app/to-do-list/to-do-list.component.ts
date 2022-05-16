@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent implements OnInit {
+  toDoListItems: string[] = [];
   handleNewToDoItem(newToDoItem: string) {
-    throw new Error('Method not implemented.');
+    this.toDoListItems.push(newToDoItem);
+    console.log('Received event' + newToDoItem);
   }
 
   constructor() { }
