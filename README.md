@@ -51,7 +51,9 @@ Create a simple ToDo list app
 - Add ability to persist in local storage
 - Add ability to store/update/retrieve with a service
 
-# NgTodoKata
+# Setting Up and Operating Angular
+
+Follow these instructions to get Angular set up locally: [Angular - Getting Started - Setup](https://angular.io/guide/setup-local).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
