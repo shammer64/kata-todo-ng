@@ -8,7 +8,6 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ToDoListEntryComponent implements OnInit {
   @Output() newToDoRequest: EventEmitter<string> = new EventEmitter();
   handleNewToDoItem() {
-    console.log("Button clicked: " + this.newToDoItem);
     this.newToDoRequest.emit(this.newToDoItem);
     this.newToDoItem = '';
   }

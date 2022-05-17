@@ -9,7 +9,6 @@ export class ToDoListComponent implements OnInit {
   toDoListItems: string[] = [];
   handleNewToDoItem(newToDoItem: string) {
     this.toDoListItems.push(newToDoItem);
-    console.log('Received event' + newToDoItem);
   }
 
   constructor() { }
