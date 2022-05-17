@@ -45,6 +45,12 @@ Create a simple ToDo list app
 - Handles callback from ToDoListEntry component
 - Passes updated ToDo items to ToDoListItems component
 
+8. Optional next steps
+- Style the application
+- Add ability to remove an item
+- Add ability to persist in local storage
+- Add ability to store/update/retrieve with a service
+
 # NgTodoKata
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
