@@ -12,13 +12,19 @@ describe('ToDoListItemsComponent', () => {
 
   it('should render a textbox', () => {
     const textbox = screen.getByRole('textbox', {
-      name: /New To-Do/i,
+      name: /new to-do/i,
     });
 
     expect(textbox).toBeDefined();
   });
 
-  // should render a button
+  it('should render a button', () => {
+    const button = screen.getByRole('button', {
+      name: /add item/i
+    })
+
+    expect(button).toBeDefined();
+  });
   // should disable button when textbox is empty
   // should enable button when texbox is not empty
   // should emit an event when button is pressed

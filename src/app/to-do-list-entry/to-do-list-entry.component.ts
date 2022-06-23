@@ -4,8 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-to-do-list-entry',
   template: `
     <div data-testid="to-do-list-entry">
-    <label for="new-item">Enter a new To-Do</label>  
-    <input type="text" id="new-item" />
+      <label for="new-item">Enter a new To-Do</label>  
+      <input type="text" id="new-item" />
+      <button>Add Item</button>
     </div>
   `,
   styleUrls: ['./to-do-list-entry.component.css'],
