@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "ng-todo-kata"
+  "cli": {
+    "analytics": "f2e6f2b4-8679-459f-aa9a-ff2554aa7620"
+  }
 }
