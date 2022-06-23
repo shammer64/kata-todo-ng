@@ -3,17 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-to-do-list-entry',
   template: `
-    <p>
+    <div data-testid="to-do-list-entry">
       to-do-list-entry works!
-    </p>
+    </div>
   `,
-  styleUrls: ['./to-do-list-entry.component.css']
+  styleUrls: ['./to-do-list-entry.component.css'],
 })
 export class ToDoListEntryComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

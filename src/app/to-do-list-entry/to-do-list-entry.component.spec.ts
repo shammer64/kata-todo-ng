@@ -1,25 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen } from '@testing-library/angular';
 import { ToDoListEntryComponent } from './to-do-list-entry.component';
 
-describe('ToDoListEntryComponent', () => {
-  let component: ToDoListEntryComponent;
-  let fixture: ComponentFixture<ToDoListEntryComponent>;
-
+describe('ToDoListItemsComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ToDoListEntryComponent ]
-    })
-    .compileComponents();
+    await render(ToDoListEntryComponent, {});
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ToDoListEntryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should render the component', () => {
+    expect(screen.getByTestId('to-do-list-entry')).toBeDefined();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // should render a textbox
+  // should render a button
+  // should disable button when textbox is empty
+  // should enable button when texbox is not empty
+  // should emit an event when button is pressed
 });
