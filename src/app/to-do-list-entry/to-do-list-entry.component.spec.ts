@@ -10,7 +10,14 @@ describe('ToDoListItemsComponent', () => {
     expect(screen.getByTestId('to-do-list-entry')).toBeDefined();
   });
 
-  // should render a textbox
+  it('should render a textbox', () => {
+    const textbox = screen.getByRole('textbox', {
+      name: /New To-Do/i,
+    });
+
+    expect(textbox).toBeDefined();
+  });
+
   // should render a button
   // should disable button when textbox is empty
   // should enable button when texbox is not empty
