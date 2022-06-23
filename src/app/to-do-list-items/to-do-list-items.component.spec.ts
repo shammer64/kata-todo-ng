@@ -1,24 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen } from '@testing-library/angular';
 import { ToDoListItemsComponent } from './to-do-list-items.component';
 
 describe('ToDoListItemsComponent', () => {
-  let component: ToDoListItemsComponent;
-  let fixture: ComponentFixture<ToDoListItemsComponent>;
-
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ToDoListItemsComponent],
-    }).compileComponents();
+    await render(ToDoListItemsComponent, {});
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ToDoListItemsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render the component', () => {
+    expect(screen.getByTestId('to-do-list-items')).toBeDefined();
   });
 });
