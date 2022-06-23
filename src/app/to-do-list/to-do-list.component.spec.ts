@@ -1,25 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen } from '@testing-library/angular';
 import { ToDoListComponent } from './to-do-list.component';
 
-describe('ToDoListComponent', () => {
-  let component: ToDoListComponent;
-  let fixture: ComponentFixture<ToDoListComponent>;
-
+describe('ToDoListItemsComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ToDoListComponent ]
-    })
-    .compileComponents();
+    await render(ToDoListComponent, {});
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ToDoListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should render the component', () => {
+    expect(screen.getByTestId('to-do-list')).toBeDefined();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // should render a ToDoListEntryComponent
+  // should render a ToDoListItemsComponent
+  // should render no items when no items are passed to ToDoListItemsComponent
+  // should render items when items are passed to ToDoListItemsComponent
+  // should update state on new item event from ToDoListEntryComponent
 });
