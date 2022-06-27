@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ToDoListEntryComponent } from './to-do-list-entry/to-do-list-entry.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoListItemsComponent } from './to-do-list-items/to-do-list-items.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ToDoListItemsComponent } from './to-do-list-items/to-do-list-items.comp
     ToDoListItemsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
