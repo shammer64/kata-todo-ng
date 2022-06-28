@@ -1,22 +1,23 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ToDoListEntryComponent } from './to-do-list-entry/to-do-list-entry.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoListItemsComponent } from './to-do-list-items/to-do-list-items.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToDoListEntryComponent,
     ToDoListComponent,
-    ToDoListItemsComponent
+    ToDoListItemsComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, CommonModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

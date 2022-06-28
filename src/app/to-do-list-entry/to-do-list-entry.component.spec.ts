@@ -1,9 +1,16 @@
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { render, screen } from '@testing-library/angular';
 import { ToDoListEntryComponent } from './to-do-list-entry.component';
 
-describe('ToDoListItemsComponent', () => {
+describe('ToDoListEntryComponent', () => {
   beforeEach(async () => {
-    await render(ToDoListEntryComponent, {});
+    await render(ToDoListEntryComponent, {
+      imports: [BrowserModule, CommonModule, FormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    });
   });
 
   it('should render the component', () => {
