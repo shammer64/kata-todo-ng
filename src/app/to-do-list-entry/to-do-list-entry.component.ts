@@ -4,14 +4,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   selector: 'app-to-do-list-entry',
   template: `
     <div data-testid="to-do-list-entry">
-      <label for="new-item">Enter a new To-Do</label>
-      <input
-        type="text"
-        id="new-item"
-        [(ngModel)]="newItem"
-      />
-      <button [disabled]="newItem === ''"
-        (click)="onNewItem(newItem)">Add Item</button>
+      <label for="new-item"
+        >Enter a new To-Do
+        <input type="text" id="new-item" [(ngModel)]="newItem" />
+      </label>
+      <button [disabled]="newItem === ''" (click)="onNewItem(newItem)">
+        Add Item
+      </button>
     </div>
   `,
   styleUrls: ['./to-do-list-entry.component.css'],
