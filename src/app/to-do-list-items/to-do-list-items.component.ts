@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   template: `
     <div data-testid="to-do-list-items">
       <ul>
-        <li *ngIf="toDoItems.length === 0">No To-Do Items to show.</li>
+        <p *ngIf="toDoItems.length === 0">No To-Do Items to show.</p>
         <li *ngFor="let item of toDoItems">{{item}}</li>
       </ul>
     </div>
