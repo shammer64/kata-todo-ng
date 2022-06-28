@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { render, screen } from '@testing-library/angular';
 import { ToDoListItemsComponent } from './to-do-list-items.component';
 
@@ -8,6 +9,7 @@ describe('ToDoListItemsComponent', () => {
       componentProperties: {
         toDoItems: [],
       },
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
   });
 
