@@ -17,7 +17,48 @@ describe('ToDoListItemsComponent', () => {
     expect(screen.getByTestId('to-do-list-items')).toBeDefined();
   });
 
-  // should render no items when none are passed
-  // should render items when items are passed
+  it('should render a message when none are passed', () => {
+    expect(screen.getByText(/no to-do items/i)).toBeDefined();
+  });
+
+});
+
+describe('ToDoListItemsComponent', () => {
+
+  it('should not render message when items are passed', async () => {
+    const input = [
+      'Change the cat litter',
+      'Vacuum the floors',
+      'Dust the living room',
+    ];
+    await render(ToDoListItemsComponent, {
+      imports: [BrowserModule, CommonModule, FormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      componentProperties: {
+        toDoItems: input,
+      },
+    });
+
+    expect(screen.queryByText(/no to-do items/i)).toBeFalsy();
+  });
+
+  it('should render items when items are passed', async () => {
+    const input = [
+      'Change the cat litter',
+      'Vacuum the floors',
+      'Dust the living room',
+    ];
+    await render(ToDoListItemsComponent, {
+      imports: [BrowserModule, CommonModule, FormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      componentProperties: {
+        toDoItems: input,
+      },
+    });
+
+    expect(screen.getByText('Change the cat litter')).toBeDefined();
+    expect(screen.getByText('Vacuum the floors')).toBeDefined();
+    expect(screen.getByText('Dust the living room')).toBeDefined();
+  });
 
 });
